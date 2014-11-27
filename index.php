@@ -58,8 +58,8 @@
 			<div class="collapse navbar-collapse navbar-right" id="bs-WDM-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="comparereads.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="comparereads.html">Contact</a></li>
+						<li><a href="http://books.google.ie/">G-Books</a></li>
+							<li><a href="https://www.goodreads.com">Goodreads</a></li>
 			</div>
 		</div>
 	</nav>
@@ -100,7 +100,7 @@
 		<p>Book Name: </p><input type="text" name="book"></input></br>
 		<br/>
 		<input type="submit" value="search"/>
-	</br></br>
+	</br>
 	</form>
 
 	<?php
@@ -155,8 +155,8 @@
 					<div class="col-md-7">
 						<ul class="footer-nav">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="http://books.google.ie/">G-Books</a></li>
+							<li><a href="https://www.goodreads.com">Goodreads</a></li>
 						</ul>	
 					</div>
 </footer>
