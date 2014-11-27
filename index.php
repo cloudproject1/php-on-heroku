@@ -100,7 +100,7 @@
 		<p>Book Name: </p><input type="text" name="book"></input></br>
 		<br/>
 		<input type="submit" value="search"/>
-	</br>
+	</br></br>
 	</form>
 
 	<?php
