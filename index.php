@@ -68,8 +68,8 @@
 <div class="jumbotron">
 	<div class="container">
 		<img src="images/books1.png" class="pull-left" style="margin:15px;" height=200px;>
- 			<h2 style="color:#5D5F61;"class="no-margin">Compare Book Reviews</h2><br>
-  				<p class="text-justify">Welcome to Compare Reads. </br> Use this web app to search book reviews of your choice from both Google 						
+ 			<h2 style="color:#5D5F61;"class="no-margin">Welcome to CompareReads. </h2>
+  				<p class="text-justify"></br> Use this web app to search book reviews of your choice from both Google 						
   					Books and Amazons Goodreads using book title or (ISBN) International Standard Book Number<p>
   				
 </div>
@@ -100,7 +100,8 @@
 		<p>Book Name: </p><input type="text" name="book"></input></br>
 		<br/>
 		<input type="submit" value="search"/>
-	</br></br>
+	</br>
+	</br>
 	</form>
 
 	<?php
