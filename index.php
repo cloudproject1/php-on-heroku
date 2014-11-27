@@ -41,38 +41,6 @@
     		</script>
     	
 
-    <!-- <script type="text/javascript">
-            function myCallback(result) {
-              alert('nb of reviews for book: ' + result.reviews.length);
-            }
-            var scriptTag = document.createElement('script');
-            scriptTag.src = "https://www.goodreads.com/book/isbn?callback=myCallback&format=json&isbn=0441172717&user_id=35702444";
-            document.getElementsByTagName('head')[0].appendChild(scriptTag);
-            </script>-->
-
-<!--<script src="https://www.goodreads.com/jsapi" type="text/javascript"></script>
-<script language="Javascript" type="text/javascript">
-
-     var req = require('request');
-	 var parseString = require('xml2js').parseString;
-
-	 req.get('https://www.goodreads.com/book/title.xml?author=Arthur+Conan+Doyle&key=M5eRHkSwMkqNla3pMWlZA&title=Hound+of+the+Baskervilles', {
-     form:{
-           'key' : 'M5eRHkSwMkqNla3pMWlZA',
-           'isbn' : ''
-    	  }},
-
- 	 function (error, response, body) {
-  
-  	//error handling goes here!
-  	  parseString(body, function (err, result) {
-    //error handling goes here, too!
-   	  console.dir(result);
- 
-  });
-});
- </script>-->
-
 </head>
 	<body>
 		<nav class="navbar navbar-inverse" role="navigation" style="margin:0px;">
@@ -104,8 +72,6 @@
   				<p class="text-justify">Welcome to Compare Reads. </br> Use this web app to search book reviews of your choice from both Google 						
   					Books and Amazons Goodreads using book title or (ISBN) International Standard Book Number<p>
   				
-  				<!--<footer class="text-right">Cloud Computing Assignment</footer>-->
-                <!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>-->
 </div>
 	</div>
 
@@ -132,7 +98,6 @@
 	<form method="post">
 		<p>Author Name: </p><input type="text" name="author"></input></br>
 		<p>Book Name: </p><input type="text" name="book"></input></br>
-		<p>ISBN: </p><input type="text" name="isbn"></input></br>
 		<br/>
 		<input type="submit" value="search"/>
 	</form>
@@ -141,47 +106,40 @@
 
 		$author = $_POST{'author'};
 		$book = $_POST{'book'}; 
+
+		$urlString = "https://www.goodreads.com/book/title.xml?author{$author}=&key=M5eRHkSwMkqNla3pMWlZA&title={$book}";
+		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+			$mybooks = simplexml_load_file($urlString);
+			echo $mybooks ->book[0]->reviews_widget;
+
+		}
+	?>
+
+		<form method="post">
+		<p>ISBN: </p><input type="text" name="isbn"></input></br>
+		<br/>
+		<input type="submit" value="search"/>
+		</form>
+
+	<?php
+		
 		$isbn = $_POST{'isbn'};
 
 		$urllString = "https://www.goodreads.com/book/title.xml?key=M5eRHkSwMkqNla3pMWlZA&isbn={$isbn}";
-		$urlString = "https://www.goodreads.com/book/title.xml?author{$author}=&key=M5eRHkSwMkqNla3pMWlZA&title={$book}";
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-			$mysongs = simplexml_load_file($urlString);
 			$myisbn = simplexml_load_file($urllString);
 			echo $myisbn ->book[0]->reviews_widget;
-			echo $mysongs ->book[0]->reviews_widget;
-			// echo $_POST{'author'};
-			// echo $urlString;
 		}
 	?>
 
 </div>
+
 	</div>
 
 		</div>
 	</div>
+
 </div>
-
-
-<!-- <div id="isbnsearch">
-<form method="post">
-		<p>ISBN: </p><input type="text" name="isbn"></input></br>
-		<br/>
-		<input type="submit" value="search"/>
-	</form>
-<?php
-	$isbn = $_POST{'isbn'};
-	$urlString = "https://www.goodreads.com/book/title.xml?key=M5eRHkSwMkqNla3pMWlZA&isbn={$isbn}";
-	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$myisbn = simplexml_load_file($urlString);
-		echo $myisbn ->book[0]->reviews_widget;
-	}
-?>
-</div> -->
-
-
-<!-- Start of the footer -->
-
 <footer class="site-footer">
 	<div class="container">
 		<div class="row">
@@ -201,8 +159,6 @@
 						</ul>	
 					</div>
 </footer>
-
-<!-- End of the footer -->
 
 
 <script src="js/jquery.min.js"></script>
