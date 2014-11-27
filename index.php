@@ -123,6 +123,8 @@
 </div>
 	</div>
 
+
+
 <div class="col-sm-6 col-md-4 col-md-offset-1 col-sm-offset-1">
 	<h3><img src="images/GoodReads-Icon.png" class="pull-left" style="margin:0px;" height=40px;></span> Goodreads</h3><br>
 
@@ -130,6 +132,7 @@
 	<form method="post">
 		<p>Author Name: </p><input type="text" name="author"></input></br>
 		<p>Book Name: </p><input type="text" name="book"></input></br>
+		<p>ISBN: </p><input type="text" name="isbn"></input></br>
 		<br/>
 		<input type="submit" value="search"/>
 	</form>
@@ -138,9 +141,14 @@
 
 		$author = $_POST{'author'};
 		$book = $_POST{'book'}; 
+		$isbn = $_POST{'isbn'};
+
+		$urllString = "https://www.goodreads.com/book/title.xml?key=M5eRHkSwMkqNla3pMWlZA&isbn={$isbn}";
 		$urlString = "https://www.goodreads.com/book/title.xml?author{$author}=&key=M5eRHkSwMkqNla3pMWlZA&title={$book}";
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$mysongs = simplexml_load_file($urlString);
+			$myisbn = simplexml_load_file($urllString);
+			echo $myisbn ->book[0]->reviews_widget;
 			echo $mysongs ->book[0]->reviews_widget;
 			// echo $_POST{'author'};
 			// echo $urlString;
@@ -153,6 +161,23 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- <div id="isbnsearch">
+<form method="post">
+		<p>ISBN: </p><input type="text" name="isbn"></input></br>
+		<br/>
+		<input type="submit" value="search"/>
+	</form>
+<?php
+	$isbn = $_POST{'isbn'};
+	$urlString = "https://www.goodreads.com/book/title.xml?key=M5eRHkSwMkqNla3pMWlZA&isbn={$isbn}";
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$myisbn = simplexml_load_file($urlString);
+		echo $myisbn ->book[0]->reviews_widget;
+	}
+?>
+</div> -->
 
 
 <!-- Start of the footer -->
@@ -185,4 +210,3 @@
 	
 	</body>
 </html>
-3
