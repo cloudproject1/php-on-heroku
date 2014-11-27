@@ -57,7 +57,7 @@
 		<a class="navbar-brand" href="#">Compare Reads</a>
 			<div class="collapse navbar-collapse navbar-right" id="bs-WDM-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="comparereads.html">Home</a></li>
+					<li><a href="https://mysterious-gorge-2836.herokuapp.com/">Home</a></li>
 						<li><a href="http://books.google.ie/">G-Books</a></li>
 							<li><a href="https://www.goodreads.com">Goodreads</a></li>
 			</div>
@@ -154,7 +154,7 @@
 				<div class="col-md-5">Cloud Computing 2014</div>
 					<div class="col-md-7">
 						<ul class="footer-nav">
-							<li><a href="index.html">Home</a></li>
+							<li><a href="https://mysterious-gorge-2836.herokuapp.com/">Home</a></li>
 							<li><a href="http://books.google.ie/">G-Books</a></li>
 							<li><a href="https://www.goodreads.com">Goodreads</a></li>
 						</ul>	
