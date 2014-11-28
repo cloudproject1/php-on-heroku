@@ -80,15 +80,7 @@
 	<div class="container">
 		<div class="row">
 
-	<div class="col-sm-6 col-md-4 col-md-offset-1">
-		<h3><img src="images/google-icon.png" class="pull-left" style="margin:0px;" height=40px;> Google Books</h3><br>
-
-
-<div id="searchcontrol">
-
-</div>
-	</div>
-
+	
 
 
 <div class="col-sm-6 col-md-4 col-md-offset-1 col-sm-offset-1">
@@ -136,9 +128,20 @@
 	}
 	?>
 
+	</div>
 </div>
 
+<div class="col-sm-6 col-md-4 col-md-offset-1">
+		<h3><img src="images/google-icon.png" class="pull-left" style="margin:0px;" height=40px;> Google Books</h3><br>
+
+
+<div id="searchcontrol">
+
+</div>
 	</div>
+
+
+	
 
 		</div>
 	</div>
