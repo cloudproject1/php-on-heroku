@@ -126,12 +126,14 @@
 	<?php
 		
 		$isbn = $_POST{'isbn'};
+		if (is_null($isbn) == false){
 
 		$urllString = "https://www.goodreads.com/book/title.xml?key=M5eRHkSwMkqNla3pMWlZA&isbn={$isbn}";
 		if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$myisbn = simplexml_load_file($urllString);
 			echo $myisbn ->book[0]->reviews_widget;
 		}
+	}
 	?>
 
 </div>
